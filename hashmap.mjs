@@ -109,10 +109,8 @@ class HashMap {
     } else {
       this._buckets[hashNewEntry] = new LinkedListForHashmap({ key, value });
     }
-    console.log(this.loadFactor());
 
-    if (!skipGrowCheck && this.loadFactor() > 0.18) {
-      console.log("growing!");
+    if (!skipGrowCheck && this.loadFactor() > 0.75) {
       this.grow();
     }
   }
